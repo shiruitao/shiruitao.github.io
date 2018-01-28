@@ -189,24 +189,22 @@
 </li>
 </ol>
 <p>TrimSuffix<br>删除 s 尾部的 suffix 字符串<br>如果 s 不是以 suffix 结尾，则返回原始 s<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func TrimSuffix(s, suffix string) string</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>注：TrimSuffix只是去掉s字符串结尾的suffix字符串，只是去掉１次，<br>而TrimRight是一直去掉s字符串右边的字符串，只要有响应的字符串就去掉，<br>是一个多次的过程，这也是二者的本质区别．</p>
+<p>注：TrimSuffix只是去掉s字符串结尾的suffix字符串，只是去掉１次，<br>而TrimRight是一直去掉s字符串右边的字符串，只要有响应的字符串就去掉，<br>是一个多次的过程，这也是二者的本质区别.</p>
 <ol>
-<li>Replace<br>返回 s 的副本，并将副本中的 old 字符串替换为 new 字符串<br>替换次数为 n 次，如果 n 为 -1，则全部替换<br>如果 old 为空，则在副本的每个字符之间都插入一个 new  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func Replace(s, old, new string, n int) string</span><br></pre></td></tr></table></figure>
+<li><p>Replace<br>返回 s 的副本，并将副本中的 old 字符串替换为 new 字符串,<br>替换次数为 n 次，如果 n 为 -1，则全部替换<br>如果 old 为空，则在副本的每个字符之间都插入一个 new  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func Replace(s, old, new string, n int) string</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>EqualFold<br>判断 s 和 t 是否相等。忽略大小写，同时它还会对特殊字符进行转换<br>比如将“ϕ”转换为“Φ”、将“Ǆ”转换为“ǅ”等，然后再进行比较  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func EqualFold(s, t string) bool</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-</blockquote>
-<ol>
-<li>EqualFold<br>判断 s 和 t 是否相等。忽略大小写，同时它还会对特殊字符进行转换<br>比如将“ϕ”转换为“Φ”、将“Ǆ”转换为“ǅ”等，然后再进行比较  <pre><code>func EqualFold(s, t string) bool
-</code></pre></li>
-</ol>
 <hr>
-<p>  <a href="http://blog.csdn.net/chenbaoke/article/details/40318423" target="_blank" rel="noopener">参考来源</a></p>
+<p>  <a href="http://blog.csdn.net/chenbaoke/article/details/40318423" target="_blank" rel="noopener">参考来源: http://blog.csdn.net/chenbaoke/article/details/40318423</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="shiruitao.github.io/2018/01/27/golang的strings原码/" data-id="cjcy6wz89000087hn7mf6bn2o" class="article-share-link">Share</a>
+      <a data-url="shiruitao.github.io/2018/01/27/golang的strings原码/" data-id="cjcy726hd00009jhn4ciqe9l2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go笔记/">go笔记</a></li></ul>
@@ -258,7 +256,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="shiruitao.github.io/2018/01/26/发表文章/" data-id="cjcy6wz8e000187hnl96nqmac" class="article-share-link">Share</a>
+      <a data-url="shiruitao.github.io/2018/01/26/发表文章/" data-id="cjcy726hi00019jhnv4qmfv25" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
