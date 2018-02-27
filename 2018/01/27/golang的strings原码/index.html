@@ -5,18 +5,18 @@
   
   <title>golang的strings原码 | Personal Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="strings.go  Count计算字符串sep在s中的非重叠个数如果sep为””,返回s的字符个数+1   12345678func Count(s, sep string) int  func main() &amp;#123;      s := &amp;quot;Hello,世界!!!!!&amp;quot">
+  <meta name="description" content="strings.go  Count计算字符串sep在s中的非重叠个数如果sep为””,返回s的字符个数+1  12345678func Count(s, sep string) int  func main() &amp;#123;      s := &amp;quot;Hello,世界!!!!!&amp;quot;">
 <meta name="keywords" content="go笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="golang的strings原码">
 <meta property="og:url" content="shiruitao.github.io/2018/01/27/golang的strings原码/index.html">
 <meta property="og:site_name" content="Personal Blog">
-<meta property="og:description" content="strings.go  Count计算字符串sep在s中的非重叠个数如果sep为””,返回s的字符个数+1   12345678func Count(s, sep string) int  func main() &amp;#123;      s := &amp;quot;Hello,世界!!!!!&amp;quot;      n := strings.Count(s, &amp;quot;!&amp;quot;)      fmt">
+<meta property="og:description" content="strings.go  Count计算字符串sep在s中的非重叠个数如果sep为””,返回s的字符个数+1  12345678func Count(s, sep string) int  func main() &amp;#123;      s := &amp;quot;Hello,世界!!!!!&amp;quot;      n := strings.Count(s, &amp;quot;!&amp;quot;)      fmt.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-28T02:56:50.000Z">
+<meta property="og:updated_time" content="2018-02-27T15:14:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="golang的strings原码">
-<meta name="twitter:description" content="strings.go  Count计算字符串sep在s中的非重叠个数如果sep为””,返回s的字符个数+1   12345678func Count(s, sep string) int  func main() &amp;#123;      s := &amp;quot;Hello,世界!!!!!&amp;quot;      n := strings.Count(s, &amp;quot;!&amp;quot;)      fmt">
+<meta name="twitter:description" content="strings.go  Count计算字符串sep在s中的非重叠个数如果sep为””,返回s的字符个数+1  12345678func Count(s, sep string) int  func main() &amp;#123;      s := &amp;quot;Hello,世界!!!!!&amp;quot;      n := strings.Count(s, &amp;quot;!&amp;quot;)      fmt.">
   
     <link rel="alternate" href="/atom.xml" title="Personal Blog" type="application/atom+xml">
   
@@ -93,9 +93,11 @@
       
         <h2 id="strings-go"><a href="#strings-go" class="headerlink" title="strings.go"></a>strings.go</h2><hr>
 <ol>
-<li><p>Count<br>计算字符串sep在s中的非重叠个数<br>如果sep为””,返回s的字符个数+1  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">func Count(s, sep string) int  </span><br><span class="line">func main() &#123;  </span><br><span class="line">    s := &quot;Hello,世界!!!!!&quot;  </span><br><span class="line">    n := strings.Count(s, &quot;!&quot;)  </span><br><span class="line">    fmt.Println(n) // 5  </span><br><span class="line">    n = strings.Count(s, &quot;!!&quot;)  </span><br><span class="line">    fmt.Println(n) // 2  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>Count<br>计算字符串sep在s中的非重叠个数<br>如果sep为””,返回s的字符个数+1  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">func Count(s, sep string) int  </span><br><span class="line">func main() &#123;  </span><br><span class="line">    s := &quot;Hello,世界!!!!!&quot;  </span><br><span class="line">    n := strings.Count(s, &quot;!&quot;)  </span><br><span class="line">    fmt.Println(n) // 5  </span><br><span class="line">    n = strings.Count(s, &quot;!!&quot;)  </span><br><span class="line">    fmt.Println(n) // 2  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+<a id="more"></a>
+<ol>
 <li><p>Contains<br>判断字符串 s 中是否包含子串 substr<br>如果 substr 为空，则返回 true  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">func ContainsRune(s string, r rune) bool</span><br><span class="line">func main() &#123;  </span><br><span class="line">    s := &quot;Hello,世界!!!!!&quot;  </span><br><span class="line">    b := strings.Contains(s, &quot;!!&quot;)  </span><br><span class="line">    fmt.Println(b) // true  </span><br><span class="line">    b = strings.Contains(s, &quot;!?&quot;)  </span><br><span class="line">    fmt.Println(b) // false  </span><br><span class="line">    b = strings.Contains(s, &quot;&quot;)  </span><br><span class="line">    fmt.Println(b) // true  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -204,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="shiruitao.github.io/2018/01/27/golang的strings原码/" data-id="cjcy726hd00009jhn4ciqe9l2" class="article-share-link">Share</a>
+      <a data-url="shiruitao.github.io/2018/01/27/golang的strings原码/" data-id="cje5sm69q0000t0hn1ri5h2jd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go笔记/">go笔记</a></li></ul>
