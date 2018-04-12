@@ -126,7 +126,7 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-634795.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
                 <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >go基础(二)</h2></a>
             </div>
             <!-- Post -->
@@ -137,7 +137,7 @@
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Param <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Show <span class="keyword">struct</span> &#123;</span><br><span class="line">	Param</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main1</span><span class="params">()</span></span> &#123;</span><br><span class="line">	s := <span class="built_in">new</span>(Show)</span><br><span class="line">	s.Param[<span class="string">"RMB"</span>] = <span class="number">10000</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Parm未初始化, 解决办法: <code>s.Param = make(map[string]interface{})</code></p>
 <blockquote>
-<p>2．请输出下面代码有什么问题</p>
+<p>2．v.(type)是数据类型，成员不能进行操作</p>
 </blockquote>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> student <span class="keyword">struct</span> &#123;</span><br><span class="line">	Name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">zhoujielun</span><span class="params">(v <span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">	<span class="keyword">switch</span> msg := v.(<span class="keyword">type</span>) &#123;</span><br><span class="line">	<span class="keyword">case</span> *student, student:</span><br><span class="line">		msg.Name</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
